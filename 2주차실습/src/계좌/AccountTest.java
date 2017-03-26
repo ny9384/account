@@ -40,7 +40,6 @@ public class AccountTest {
       CheckingAccount b = new CheckingAccount (account2, credit_limit2, interest2, loan_interest2);
       
       while(true) {
-         
          System.out.print("\n무슨 작업을 하시겠습니까? 1 -> 입금, 2 -> 인출, 3 -> 다음 달 잔액변동, 4 -> 끝내기: ");
          sel=input.nextInt();
       
