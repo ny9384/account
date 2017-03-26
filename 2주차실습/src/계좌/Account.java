@@ -23,6 +23,7 @@ public class Account {
    {
       return balance;
    }
+   
    public void setBalance()
    {
 	   balance = CheckingAccount.month;
