@@ -5,22 +5,43 @@ import java.util.Scanner;   //scan(입력)기능을 위한 import
 public class AccountTest {
    
    public static void main(String[] args) {
-      double account1, account2;
+      double account1, credit_limit1, interest1, loan_interest1;
+      double account2, credit_limit2, interest2, loan_interest2;
       double money;
       int sel, sel2;
       Scanner input =new Scanner(System.in);
       
       System.out.print("account1 balance: ");
       account1 = input.nextDouble();
-      System.out.print("account2 balacne: ");
+      if(account1<=0){
+    	  System.out.print("0이상의 수를 입력하세요 ! \n");
+    	  System.exit(0);
+      }
+      System.out.print("account1 credit_limit: ");
+      credit_limit1 = input.nextDouble();
+      System.out.print("account1 interest: ");
+      interest1 = input.nextDouble();
+      System.out.print("account1 loan_interest: ");
+      loan_interest1 = input.nextDouble();
+      CheckingAccount a = new CheckingAccount (account1, credit_limit1, interest1, loan_interest1);
+      
+      System.out.print("account2 balance: ");
       account2 = input.nextDouble();
-         
-      Account a = new Account (account1);
-      Account b = new Account(account2);
+      if(account2<=0){
+    	  System.out.print("0이상의 수를 입력하세요 ! \n");
+    	  System.exit(0);
+      }
+      System.out.print("account2 credit_limit: ");
+      credit_limit2 = input.nextDouble();
+      System.out.print("account2 interest: ");
+      interest2 = input.nextDouble();
+      System.out.print("account2 loan_interest: ");
+      loan_interest2 = input.nextDouble();
+      CheckingAccount b = new CheckingAccount (account2, credit_limit2, interest2, loan_interest2);
       
       while(true) {
          
-         System.out.print("\n무슨 작업을 하시겠습니까? 1 -> 입금, 2 -> 인출, 3 -> 잔액조회, 4 -> 끝내기: ");
+         System.out.print("\n무슨 작업을 하시겠습니까? 1 -> 입금, 2 -> 인출, 3 -> 다음 달 잔액변동, 4 -> 끝내기: ");
          sel=input.nextInt();
       
             if (sel==1) {
@@ -51,25 +72,24 @@ public class AccountTest {
                if (sel2==1) {
                   System.out.print("\nEnter withdrawal amount for account1 : ");
                   money = input.nextDouble();
-                  System.out.printf("\nsubtracting %.2f from account1 balance\n\n", money);
-                  a.debit(money);
-            
+                  a.debit(money);       
                   System.out.printf("account1 balance: $%.2f\n",a.getBalance());
                   System.out.printf("account2 balance: $%.2f\n",b.getBalance());
                }
                if (sel2==2) {
                   System.out.print("\nEnter withdrawal amount for account2 : ");
                   money = input.nextDouble();
-                  System.out.printf("\nsubstracting %.2f from account2 balance\n\n", money);
-                  b.debit(money);
-            
+                  b.debit(money);       
                   System.out.printf("account1 balance: $%.2f\n",a.getBalance());
                   System.out.printf("account2 balance: $%.2f\n",b.getBalance());
                }
             }
             if (sel==3) {
-               System.out.printf("account1 balance: $%.2f\n",a.getBalance());
-               System.out.printf("account2 balance: $%.2f\n",b.getBalance());
+            	System.out.println("next month!");
+            	a.nextMonth(a.getBalance());
+            	b.nextMonth(b.getBalance());
+            	System.out.printf("account1 balance: $%.2f\n", a.balance);
+            	System.out.printf("account2 balance: $%.2f\n", b.balance);
             }
             if (sel==4) System.exit(0);
       }
