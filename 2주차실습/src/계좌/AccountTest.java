@@ -11,7 +11,6 @@ public class AccountTest {
       int sel, sel2;
       Scanner input =new Scanner(System.in);
       
-      
       System.out.print("account1 balance: ");
       account1 = input.nextDouble();
       if(account1<=0){

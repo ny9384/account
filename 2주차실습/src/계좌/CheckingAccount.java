@@ -16,6 +16,8 @@ public class CheckingAccount extends Account {
 	
 	public void debit(double money){
 		if(money>credit_limit) System.out.println("대출한도를 초과할 수 없습니다.");
+	
+	
 		else{
 			if(balance >= money) super.debit(money);
 			else{
