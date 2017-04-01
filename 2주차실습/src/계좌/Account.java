@@ -1,6 +1,6 @@
 package °èÁÂ;
 
-public class Account {
+public abstract class Account {
    public double balance;
    
    public Account(double initialBalance)
@@ -27,6 +27,9 @@ public class Account {
    public void setBalance()
    {
 	   balance = CheckingAccount.month;
+   }
+   
+   public abstract double getWithdrawableAccount();	   
    }
 
 }

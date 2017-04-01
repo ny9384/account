@@ -5,7 +5,20 @@ import java.util.Scanner;   //scan(입력)기능을 위한 import
 public class AccountTest {
    
    public static void main(String[] args) {
-      double account1, credit_limit1, interest1, loan_interest1;
+	  //Account account1=new CheckingAccount(100,50,0.01,0.07);
+	  //Account account2=new SavingAccount(100,0.05);
+	   
+	   //Scanner scan = new Scanner(System.in;
+	   //double amount;
+      
+	  //System.out.printf("Account1 balance: $ %.2f \t현재출금가능액 :%.2f\n", account1.getBalance(),account1.getWithdrawableAccount());
+	  //System.out.println("Enter withdrawal amount for Account1:");
+	  //amount=scan.nextDouble();
+	  //account1.out.printf("Account1 balance :$%.2f \t현재출금가능액 :%.2f\n", account1.getBalance(),account1.getWithdrawableAccount());
+	 //System.out.print("account1 balance :");
+	   307
+	   
+	  double account1, credit_limit1, interest1, loan_interest1;
       double account2, credit_limit2, interest2, loan_interest2;
       double money;
       int sel, sel2;
