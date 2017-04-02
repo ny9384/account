@@ -27,12 +27,12 @@ public class CheckingAccount extends Account {
 	public double getWithdrawableAccount() {
 		double tot;
 		tot = balance + credit_limit;
+		if(tot <= 0) tot = 0;
 		return tot;
 	}
 	
 	public void passTime(int a) {
-		balance = balance * Math.pow((1+loan_interest), a);
-		
+		balance = balance * (1 + loan_interest * a);		
 	}
 	
 	public boolean isBankrupted() {
