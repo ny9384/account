@@ -1,12 +1,11 @@
 package °èÁÂ;
 
 public abstract class Account {
-   public double balance;
+   protected double balance;
    
    public Account(double initialBalance)
    {      
-      if (initialBalance>0.0) this.balance=initialBalance;
-
+      if (initialBalance>0.0) balance=initialBalance;
    }
    
    public void credit(double amount)
@@ -30,8 +29,7 @@ public abstract class Account {
    }
    
    public abstract double getWithdrawableAccount();	   
-   }
-
+   public abstract void passTime(int a);
 }
 
  
