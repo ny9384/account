@@ -38,6 +38,7 @@ public class SavingAccount extends Account implements Valuable{
 	@Override
 	public double estimateValue(int month) {
 		// TODO Auto-generated method stub
+		balance = balance * Math.pow((1+interest), month);
 		return balance;
 	}
 
