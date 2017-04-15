@@ -11,7 +11,7 @@ public class ValueableTest {
 		
 		for(Valuable objectItem:objectList){
 			System.out.printf("%s\n", objectItem.toString());
-			System.out.printf("6 month later valuable :%.2f\n\n", objectItem.EstimateValue(6));
+			System.out.printf("6 month later valuable :%.2f\n\n", objectItem.estimateValue(6));
 		}
 	}
 }

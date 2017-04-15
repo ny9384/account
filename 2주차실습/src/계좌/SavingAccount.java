@@ -2,8 +2,7 @@ package °èÁÂ;
 
 import °èÁÂ.Account;
 
-public class SavingAccount extends Account
-{
+public class SavingAccount extends Account implements Valuable{
 	
 	private double interest;
 	private double month = 0;
@@ -29,6 +28,17 @@ public class SavingAccount extends Account
 		if( month >= 13) balance = balance;
 		if( month == 12) balance = balance * Math.pow((1+interest), month);
 		else balance = balance;
+	}
+	
+	@Override 
+	public String toString(){
+		return "SavingsAccont_Balance:" +Double.toString(balance);
+	}
+
+	@Override
+	public double estimateValue(int month) {
+		// TODO Auto-generated method stub
+		return balance;
 	}
 
 }

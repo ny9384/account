@@ -1,20 +1,26 @@
 package °èÁÂ;
 
-import java.util.jar.Attributes.Name;
-
 public class Car implements Valuable{
-	private double price;
+	private final double buyFactor=0.8;
 	private String name;
+	private double price;
+	private double value;
 	
 	public Car(String name, double price){
-		this.name=name;
-		this.price=price;
+		this.name = name;
+		this.price = price;
+		value=price*buyFactor;
 	}
-	public double EstimateValue(int month){
-		price=price*0.8;
-		return price=(price*Math.pow(0.99, month));
-	}
+	
+	public double estimateValue(int month){
+		for(int i=0;i<month;i++){
+			value *= 0.99;
+		}
+		return value;
+		}
+	
+	@Override
 	public String toString(){
-		return String.format("Car name:%s\nintial price:%.2f", name,price);
+		return "car name:"+name+"\n"+"initial price:"+Double.toString(price);
 	}
 }

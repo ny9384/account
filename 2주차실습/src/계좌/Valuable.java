@@ -1,5 +1,6 @@
 package °èÁÂ;
 
 public interface Valuable {
-	double EstimateValue(int month);
+	public double estimateValue(int month);
+
 }
