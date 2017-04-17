@@ -12,9 +12,20 @@ public class SavingAccount extends Account implements Valuable{
 		this.interest = interest;
 	}
 	
-	public void debit(double money){
+	public void debit(double money) throws MinusException, OverMaxException{
 		if(month > 12) super.debit(money);
 		else System.out.println("아직 출금할 수 없습니다.");
+		
+		if(money < 0){
+			throw new MinusException();
+		}
+		else if(money > balance){
+			throw new OverMaxException();
+		}
+		else {
+			super.debit(money);
+		
+		}
 	}
 	
 	public double getWithdrawableAccount() {

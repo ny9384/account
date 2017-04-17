@@ -14,8 +14,16 @@ public class CheckingAccount extends Account implements Valuable{
 		this.loan_interest = loan_interest;
 	}
 	
-	public void debit(double money){
-		super.debit(money);
+	public void debit(double money) throws MinusException, OverMaxException{
+		if(money < 0){
+			throw new MinusException();
+		}
+		else if(money > credit_limit){
+			throw new OverMaxException();
+		}
+		else{
+			super.debit(money);
+		}
 	}
 	
 	public void nextMonth(double b){
@@ -32,7 +40,7 @@ public class CheckingAccount extends Account implements Valuable{
 	}
 	
 	public void passTime(int a) {
-		balance = balance * (1 + loan_interest * a);		
+		balance = balance * (1 + interest * a);		
 	}
 	
 	public boolean isBankrupted() {

@@ -1,6 +1,7 @@
 package °èÁÂ;
 
 import java.util.InputMismatchException;
+import java.util.*;
 
 public class AccountTest {
 	public static void main(String[] args) {
@@ -29,7 +30,7 @@ public class AccountTest {
 			}
 		finally{
 			account1.passTime(2);
-			System.out.println("2 month later account1"+account1.getBalance());
+			System.out.println("2 month later account1:"+account1.getBalance());
 			}
 	}
 }

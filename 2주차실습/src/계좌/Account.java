@@ -13,8 +13,8 @@ public abstract class Account {
       balance=balance+amount;
    }
    
-   public void debit(double amount)
-   {
+   public void debit(double amount) throws MinusException, OverMaxException
+   {	
 	   balance=balance-amount;
    }
 
